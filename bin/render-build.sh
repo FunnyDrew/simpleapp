@@ -3,5 +3,10 @@
 set -o errexit
 
 bundle install
-bundle exec rails assets:precompile
-bundle exec rails assets:clean
+npm install
+npm run build
+
+bundle exec rake assets:precompile
+bundle exec rake assets:clean
+
+bundle exec rails db:prepare
