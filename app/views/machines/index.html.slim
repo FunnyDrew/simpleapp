@@ -1,0 +1,10 @@
+p[style="color: green"]
+  = notice
+h1
+  | Machines
+#machines
+  - @machines.each do |machine|
+    = render machine
+    p
+      = link_to "Show this machine", machine
+= link_to "New machine", new_machine_path

@@ -1,0 +1,8 @@
+h1
+  | Editing machine
+= render "form", machine: @machine
+br
+div
+  = link_to "Show this machine", @machine
+  |  | 
+  = link_to "Back to machines", machines_path
