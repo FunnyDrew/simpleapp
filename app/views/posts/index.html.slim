@@ -1,0 +1,15 @@
+.container
+	h1.mt-5
+		| Посты
+	.row
+		- @posts.each do |post|
+			.col-md-12
+				.card.mb-3
+					.card-body
+						h5.card-title
+							= post.title
+						.card-text.mb2
+							= post.body
+						.text-right.small.text-muted.mt-auto
+							= 'Hi'
+						
