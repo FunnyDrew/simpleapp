@@ -14,7 +14,9 @@ html
         .container-fluid
           =link_to 'Домой', root_path, class: "navbar-brand"
           ul.navbar-nav.me-auto.mb-2.mb-md-0
-            li.nav-item
+            li.nav-iteme
+            - user_signed_in?
+            - pp '*****************************'
                =link_to 'Войти',new_user_session_path, class: "nav-link"
             li.nav-item
                =link_to 'Зарегистрироваться',new_user_registration_path, class: "nav-link"  
