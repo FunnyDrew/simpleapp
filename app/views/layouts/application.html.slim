@@ -15,8 +15,12 @@ html
           =link_to 'Домой', root_path, class: "navbar-brand"
           - if user_signed_in?
             ul.navbar-nav.me-auto.mb-2.mb-md-0
-              = link_to 'Выйти', destroy_user_session_path, data: { turbo_method: :delete },class: "navbar-brand"
-              = link_to "#{current_user.email}", '#'
+              li.nav-iteme
+                = link_to 'Выйти', destroy_user_session_path, data: { turbo_method: :delete },class: "navbar-brand"
+              li.nav-iteme
+                = link_to "#{current_user.email}", '#'
+              li.nav-iteme
+                = link_to 'Создать пост', new_post_path,class: "navbar-brand"
           - else            
             ul.navbar-nav.me-auto.mb-2.mb-md-0
               li.nav-iteme

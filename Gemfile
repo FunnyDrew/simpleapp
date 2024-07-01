@@ -12,6 +12,8 @@ gem "sentry-ruby"
 
 gem "sentry-rails"
 
+gem 'simple_form'
+
 gem "slim"
 
 gem "devise"
