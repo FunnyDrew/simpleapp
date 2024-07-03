@@ -1,9 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content: MyText
-  post: one
+    content: first    
+    post: one
+    ancestry: /
 
-two:
-  content: MyText
-  post: two
+with_comments:
+    content: this is comment with comments
+    post: one
+    ancestry: /
+
+nested:
+    content: commented comment
+    post: one
+    ancestry: /<%= ActiveRecord::FixtureSet.identify(:with_comments) %>/
+
+deep_nested:
+    content: deep comment
+    post: one
+    ancestry: /<%= [ActiveRecord::FixtureSet.identify(:with_comments), ActiveRecord::FixtureSet.identify(:nested)].join('/') %>/

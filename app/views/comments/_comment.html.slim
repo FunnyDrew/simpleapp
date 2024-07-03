@@ -1,0 +1,11 @@
+/@post.comments.order(created_at: :desc).each do |comment|
+	/.card.border-success.mb-3
+	/	.card-header.bg-transparent.border-success
+	/		| Header
+	/	.card-body.text-success
+	/		p.card-text
+	/			=comment.content
+	/			=comment.children
+	/			=comment.ancestry
+	/		.card-footer.bg-transparent.border-success
+	/			| Footer

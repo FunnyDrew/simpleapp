@@ -1,0 +1,9 @@
+.card.border-success.mb-3
+	.card-header.bg-transparent.border-success
+		| Header
+	.card-body.text-success
+		p.card-text
+			=comment.content
+			/= render partial: "comment", collection: comment.children
+	.card-footer.bg-transparent.border-success
+		| Footer

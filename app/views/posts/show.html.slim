@@ -6,18 +6,24 @@ hr
 == simple_form_for  @post.comments.new,method: :post,  url: post_comments_path(@post) do |c|
 	=c.input :content
 	=c.submit
-
+-get_hi
 hr
-- @post.comments.order(created_at: :desc).each do |comment|
-	.card.border-success.mb-3
-		.card-header.bg-transparent.border-success
-			| Header
-		.card-body.text-success
-			p.card-text
-				=comment.content
-			.card-footer.bg-transparent.border-success
-				| Footer
-
-      
+= render partial: "comment", collection: @post.comments
 
 
+
+/def has_child(node)
+/  node.is_a?(Hash)
+/end
+
+/def print_nested_hash(hash)
+/  hash.map do |key, value|
+/    if has_child(value)
+/      pp "we have nested hash there"
+/      print_nested_hash(value)
+/    else
+/      pp "key is: #{key}"
+/      pp "value is: #{value}"
+/    end
+/  end
+/end
