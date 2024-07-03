@@ -2,3 +2,14 @@ h1.mt-5
 	= @post.title
 .mt-3
 	= @post.body
+
+hr
+- @post.comments.each do |comment|
+    p
+      == comment.content
+      
+hr
+== simple_form_for  @post.comments.new, url: new_post_comment_path(@post) do |c|
+	=c.input :content
+	=c.submit
+

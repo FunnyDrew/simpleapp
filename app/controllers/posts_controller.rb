@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    debugger
+
   end
 
   # POST /machines or /machines.json
