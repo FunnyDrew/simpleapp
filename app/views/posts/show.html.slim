@@ -3,16 +3,17 @@ h1.mt-5
 .mt-3
 	= @post.body
 hr
-= simple_form_for  @post.comments.build,method: :post,  url: post_comments_path(@post) do |c|
+= simple_form_for @post.comments.new, method: :post,  url: post_comments_path(@post) do |c|
 	=c.input :content
 	=c.submit
 /-get_hi
 hr
 /-debugger
-- unless @post.comments.empty?
-	= render partial: "comment", collection: @post.comments
-
-
+- @post.comments.where.not(id: nil).each do |comment|
+	//-debugger
+	- pp#############################
+	- pp comment
+	= render partial: "comment", locals: { comment: comment } 
 
 /def has_child(node)
 /  node.is_a?(Hash)
