@@ -3,7 +3,11 @@
 		| Header
 	.card-body.text-success
 		p.card-text
-			=comment.content
-			/= render partial: "comment", collection: comment.children
+			-unless comment[:id].nil?
+				=comment.content
+			/-debugger
+			-unless comment[:id].nil?
+				debugger
+				= render partial: "comment", collection: comment.children
 	.card-footer.bg-transparent.border-success
 		| Footer
