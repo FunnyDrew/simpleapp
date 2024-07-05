@@ -6,4 +6,9 @@
 			=comment.content
 			= render partial: "comment", collection: comment.children
 	.card-footer.bg-transparent.border-success
-		| Footer
+		= link_to 'Response', "#cWE" , data: {"toggle": "collapse", "target":"#cWE"}, aria: {expanded: "false", controls: "#cWE"}	
+		.div.collapse.collapse-horizontal [id="#cWE"]
+		.div.card.card-body [style="width: 300px;"]
+			| This is some placeholder
+
+

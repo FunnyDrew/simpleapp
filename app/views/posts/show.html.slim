@@ -9,7 +9,7 @@ hr
 /-get_hi
 hr
 /-debugger
-- @post.comments.where.not(id: nil).where(ancestry: "/").each do |comment|
+- @post.comments.where.not(id: nil).where(ancestry: "/").order(created_at: :desc).each do |comment|
 	//-debugger
 	- pp#############################
 	- pp comment
