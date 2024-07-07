@@ -1,7 +1,18 @@
-h1 
-  | Welcome 
-= link_to 'New User Registration', new_user_session_path 
-h3
-  | Welcome, this is the home page
-button.btn.btn-lg.btn-danger[type="button" data-bs-toggle="popover" title="Popover title" data-bs-content="Amazing content, right ?"]
-  |  Click to toggle popover 
+h1.mt-5 Welcome
+
+= link_to 'Link with href', '#coll', data: {'bs-toggle': "collapse"}, aria: {controls: 'coll'}
+
+<div class="collapse" id="coll">
+  <div class="card card-body">
+    <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>  
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+ 
+
